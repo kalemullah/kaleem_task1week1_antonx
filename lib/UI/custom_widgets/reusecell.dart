@@ -2,57 +2,90 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../core/colors.dart';
-class Reusedcell extends StatelessWidget {
-  final String? text;
-  final VoidCallback? onPressed;
-  final Image? showimage;
-  final Widget? cardtext;
-  final width;
+import '../screens/sell_screen.dart';
 
-  Reusedcell({this.text, this.onPressed, this.showimage, this.cardtext,this.width});
+class ReUsedCell extends StatelessWidget {
+  final String? text;
+  final onPressed;
+  final showimage;
+  final titletext;
+  final discrinptiontext;
+  final icon;
+  final cardwidth;
+
+  const ReUsedCell(
+      {this.text,
+      this.onPressed,
+      this.showimage,
+      this.titletext,
+      this.cardwidth,
+      this.discrinptiontext,
+      this.icon});
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: onPressed,
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => onPressed),
+        );
+      },
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: EdgeInsets.all(8.r),
         child: Container(
-
+          width: cardwidth,
           child: Column(
             children: [
-              Container(
-                width: width,
+              SizedBox(
+                width: cardwidth,
                 height: 150.r,
-                child:ClipRRect(
+                child: ClipRRect(
                   borderRadius: BorderRadius.circular(10.0),
-                  child:  showimage,
+                  child: Image(
+                    fit: BoxFit.cover,
+                    image: AssetImage(
+                      showimage,
+                    ),
                   ),
+                ),
               ),
-              SizedBox(height: 5,),
-              Row(
-                children: [
-                  Container(child: cardtext),
-                  SizedBox(width: 75.w,),
-                  Icon(Icons.book)
-                ],
+              SizedBox(
+                height: 5.h,
               ),
-              SizedBox(height: 8.h,),
-              Padding(
-                padding: const EdgeInsets.only(right: 70.0),
+              Container(
+                padding: EdgeInsets.only(left: 10.w, right: 10.w),
+                width: cardwidth,
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Text(
+                        titletext,
+                        style: TextStyle(color: blackColor, fontSize: 18.sp),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 55.w,
+                    ),
+                    Icon(icon),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 8.h,
+              ),
+              Container(
+                width: cardwidth,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Icon(Icons.location_on),
-                    Text('Lamka 4900-553')
-                  ],
+                  children: [Icon(Icons.location_on), Text(discrinptiontext)],
                 ),
               )
             ],
           ),
           decoration: BoxDecoration(
-              color: Colors.white24,
-              borderRadius: BorderRadius.circular(10),
+            color: Colors.white24,
+            borderRadius: BorderRadius.circular(10),
             boxShadow: [
               BoxShadow(
                 color: Colors.grey.withOpacity(0.5),
@@ -62,92 +95,99 @@ class Reusedcell extends StatelessWidget {
               ),
             ],
           ),
-
         ),
       ),
     );
   }
 }
 
-
-
 class SecondReUseCell extends StatelessWidget {
-  final VoidCallback?onpressed;
-  final Image?showimage;
-  final Widget? text1;
-  final Widget? text2;
-  final Widget? text3;
+  final onpressed;
+  final showimage;
+  final  text1;
+  final  text2;
+  final  text3;
 
-  const SecondReUseCell({this.onpressed,this.showimage,this.text1,this.text2,this.text3,}) ;
+  SecondReUseCell({
+    this.onpressed,
+    this.showimage,
+    this.text1,
+    this.text2,
+    this.text3,
+  });
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){},
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => onpressed),
+        );
+      },
       child: Row(
-      children: [
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Container(
-            width: 170.r,
-            height: 200.r,
-            child:ClipRRect(
-              borderRadius: BorderRadius.circular(10.0),
-              child: Image(
-                width: 190.w,
-                fit: BoxFit.cover,
-                image: const AssetImage('assets/mag1.png',),
+        children: [
+          Padding(
+            padding:  EdgeInsets.all(8.r),
+            child: Container(
+              width: 165.r,
+              height: 200.r,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(10.0),
+                child: Image(
+                  width: 190.w,
+                  fit: BoxFit.cover,
+                  image:  AssetImage(
+                    showimage,
+                  ),
+                ),
+                //showimage,
               ),
-              //showimage,
             ),
           ),
-        ),
-        Column(
-          children: [
-            Row(
-              children: [
-                Text('02,March,2020'),
-                SizedBox(width: 60,),
-                Icon(Icons.book)
-              ],
-            ),
-            SizedBox(height: 10.h,),
-            Padding(
-              padding: const EdgeInsets.only(right: 65.0),
-              child: Text('this is  a\n Bold text',style: TextStyle(
-                color: buttonColor,
-                fontSize: 22.sp,
-                fontWeight: FontWeight.w800,
-              ),),
-            ),
-            SizedBox(height: 65.h,),
-           Padding(
-             padding: const EdgeInsets.only(right: 30.0),
-             child: Row(
-               children: [
-                 Icon(Icons.location_on),
-                 Text('this is 445446544')
-               ],
-             ),
-           )
-          ],
-        )
-      ],
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children:  [
+                  Text(text1,),
+
+                  SizedBox(
+                    width: 70.h,
+                  ),
+                  const Icon(Icons.book)
+                ],
+              ),
+              SizedBox(
+                height: 10.h,
+              ),
+              Container(
+
+                child: Text(
+                  text2,
+                  style: TextStyle(
+                    color: buttonColor,
+                    fontSize: 20.sp,
+                    fontWeight: FontWeight.w800,
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 50.h,
+              ),
+              Padding(
+                padding:  EdgeInsets.only(right: 30.0),
+                child: Row(
+                  children:  [
+                    const Icon(Icons.location_on),
+                    Text(text3)
+                  ],
+                ),
+              )
+            ],
+          )
+        ],
       ),
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -4,9 +4,9 @@ class TopViewText extends StatelessWidget {
   final  onpressed;
   final textColor;
 
-  TopViewText({
+  const TopViewText({
     required this.text,this.onpressed,this.textColor
-  }) ;
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:week1task/UI/screens/warszawa_screen.dart';
+import 'package:week1task/UI/screens/home_screen.dart';
 import '../../../core/colors.dart';
 import '../custom_widgets/custom_button.dart';
 import '../custom_widgets/custom_textfield.dart';
