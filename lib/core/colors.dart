@@ -4,3 +4,4 @@ const blackColor = Colors.black;
 const lightBlackColor = Colors.black45;
 const grayColor = Colors.grey;
 const buttonColor= Color(0xff0D638A);
+const bottomButtonColor= Color(0xffe7cdc6);

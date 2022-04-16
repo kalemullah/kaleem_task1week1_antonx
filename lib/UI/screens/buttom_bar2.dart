@@ -45,8 +45,14 @@ class BottomBar2 extends StatelessWidget {
                     child: ListView(
                       scrollDirection: Axis.horizontal,
                       children:  [
-                        TopViewText(text: 'Top View',onpressed: (){},textColor: Colors.indigo,),
-                        TopViewText(text: 'Top View',onpressed: (){},textColor: Colors.grey,),
+                        TopViewText(text: 'Top View',onpressed: (){
+
+                        },textColor: Colors.indigo,),
+                        TopViewText(text: 'Top View',onpressed: (){
+                          Container(
+                            color: Colors.green,
+                          );
+                        },textColor: Colors.grey,),
                         TopViewText(text: 'Top View',onpressed: (){},textColor: Colors.deepPurpleAccent,),
                         TopViewText(text: 'Top View',onpressed: (){},textColor: Colors.blueGrey,),
                         TopViewText(text: 'Top View',onpressed: (){},textColor: Colors.green,),

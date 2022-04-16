@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../core/colors.dart';
+import '../custom_widgets/custom_button.dart';
 import '../custom_widgets/reusecell.dart';
+import 'home_screen.dart';
 
 class TicketScreen extends StatelessWidget {
   const TicketScreen({Key? key}) : super(key: key);
@@ -34,7 +36,7 @@ class TicketScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     Container(
-                      height: 410.h,
+                      height: 490.h,
                       width: 360.w,
                       decoration: BoxDecoration(
                           color: whiteColor,
@@ -166,26 +168,44 @@ class TicketScreen extends StatelessWidget {
 
 
                     ),
-                    Container(
-                      margin: EdgeInsets.only(bottom: 10),
-                      decoration: BoxDecoration(
-                        color: Colors.yellow[200],
-                        borderRadius: BorderRadius.all(Radius.circular(15))
-                      ),
-                      height: 65.h,
-                      width: 350.w,
-                      child:  TextButton(
-                        onPressed: () {
 
-                        },
-                      child:  Text('Buy Ticket',style: TextStyle(
-                        fontSize: 30.sp,fontWeight: FontWeight.w600,color: blackColor
-                      ),),
-                        
-                      ),
-                    )
+                    // BottomButton(
+                    //   text: 'Buy Ticket',
+                    //   color: const Color(0xffe7cdc6),
+                    //   buttomcolor: blackColor,
+                    //   // onPressed: (){},
+                    //   onPressed: () async {
+                    //     Navigator.push(
+                    //         context,
+                    //         MaterialPageRoute(
+                    //             builder: (context) =>  WarsZaWaScreen()));
+                    //   },
+                    // ),
                   ],
                 )
+              ),
+              Positioned(
+                top: 580.h,
+                child: Padding(
+                  padding: const EdgeInsets.only(right: 8.0),
+                  child: Container(
+                    decoration: const BoxDecoration(
+                        color: bottomButtonColor,
+                        borderRadius: BorderRadius.all(Radius.circular(15))
+                    ),
+                    height: 65.h,
+                    width: 360.w,
+                    child:  TextButton(
+                      onPressed: () {
+
+                      },
+                      child:  Text('Buy Ticket',style: TextStyle(
+                          fontSize: 30.sp,fontWeight: FontWeight.w600,color: blackColor
+                      ),),
+
+                    ),
+                  ),
+                ),
               )
             ],
           ),
