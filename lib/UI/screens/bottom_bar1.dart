@@ -108,7 +108,8 @@ class BottomBar1 extends StatelessWidget {
                       titletext: 'Iron Deficit',
                        discrinptiontext: 'lamka 4800-3244',
                        icon: Icons.book,
-                    ), ReUsedCell(
+                    ),
+                    ReUsedCell(
                       onPressed: TicketScreen(),
                       showimage: 'assets/mag1.png',
                       cardwidth: 250.w,

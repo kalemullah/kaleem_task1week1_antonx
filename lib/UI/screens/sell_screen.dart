@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -11,7 +12,7 @@ class TicketScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Container(
+        body: SizedBox(
           height: 1.sh,
           child: Stack(
             children: [
@@ -29,127 +30,162 @@ class TicketScreen extends StatelessWidget {
                 ),
               ),
               Positioned(
-                top: 250,
-                child: Container(
-                  height: 600.h,
-                  width: 360.w,
-                  decoration: BoxDecoration(
-                      color: whiteColor,
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(30.r),
-                          topRight: Radius.circular(30.r))),
-                  padding: EdgeInsets.only(left: 20.w, right: 10.w,top: 35.h),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Text(
-                            'POLIN MUESUM',
-                            style: TextStyle(
-                              color: blackColor,
-                              fontSize: 20.sp,
-                              fontWeight: FontWeight.w600,
+                top: 180,
+                child: Column(
+                  children: [
+                    Container(
+                      height: 410.h,
+                      width: 360.w,
+                      decoration: BoxDecoration(
+                          color: whiteColor,
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(30.r),
+                              topRight: Radius.circular(30.r))),
+                      padding: EdgeInsets.only(left: 20.w, right: 10.w,top: 25.h),
+                      child:
+                      Container(
+                        height: 360.h,
+                        child: ListView(
+                          children: [
+                            Row(
+                              children: [
+                                Text(
+                                  'POLIN MUESUM',
+                                  style: TextStyle(
+                                    color: blackColor,
+                                    fontSize: 20.sp,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 130.w,
+                                ),
+                                CustomButton(icon: Icons.location_on,width: 40.w,height: 40.h,),
+                              ],
                             ),
-                          ),
-                          SizedBox(
-                            width: 130.w,
-                          ),
-                          CustomButton(icon: Icons.location_on,width: 40.w,height: 40.h,),
-                        ],
-                      ),
-                      SizedBox(height: 10.h,),
-                      Text(
-                        'this museum is 10000 year old thier'
-                            ' is a lot of jiwesh historical elements.'
-                            'this museum is 10000 year old thier'
-                            ' is a lot of jiwesh historical.....',
-                        style: TextStyle(
-                          fontSize: 15.sp,
-                          fontWeight: FontWeight.w300,
+                            SizedBox(height: 10.h,),
+                            Text(
+                              'this museum is 10000 year old thier'
+                                  ' is a lot of jiwesh historical elements.'
+                                  'this museum is 10000 year old thier'
+                                  ' is a lot of jiwesh historical.....',
+                              style: TextStyle(
+                                fontSize: 15.sp,
+                                fontWeight: FontWeight.w300,
+                              ),
+                            ),
+                            SizedBox(height: 25.h,),
+                            Row(
+                              children: [
+                                CustomButton(icon: Icons.location_on,width: 50.w,height: 50.h,),
+                                SizedBox(
+                                  width: 40.w,
+                                ),
+                                Column(
+                                  children: [
+                                    Text(
+                                      'Aniewlo',
+                                      style: TextStyle(
+                                        color: blackColor,
+                                        fontSize: 15.sp,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                    ),
+                                    Text(
+                                      'Aniewlo',
+                                      style: TextStyle(
+                                        color: lightBlackColor,
+                                        fontSize: 15.sp,
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ],
+                                )
+                              ],
+                            ),
+                            SizedBox(
+                              height: 15.h,
+                            ),
+                            Row(
+                              children: [
+                                CustomButton(icon: Icons.book,width: 50.w,height: 50.h,),
+                                SizedBox(
+                                  width: 40.w,
+                                ),
+                                Column(
+                                  children: [
+                                    Text(
+                                      'Aniewlo',
+                                      style: TextStyle(
+                                        color: blackColor,
+                                        fontSize: 15.sp,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                    ),
+                                    Text(
+                                      '9am--6pm',
+                                      style: TextStyle(
+                                        color: lightBlackColor,
+                                        fontSize: 15.sp,
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ],
+                                )
+                              ],
+                            ),
+                            SizedBox(height: 10.h,),
+                            Text(
+                              'News',
+                              style: TextStyle(
+                                color: buttonColor,
+                                fontSize: 22.sp,
+                                fontWeight: FontWeight.w800,
+                              ),
+                            ),
+                            ReUsedCell(
+                              onPressed: TicketScreen(),
+                              showimage: 'assets/mag2.png',
+                              cardwidth: 350.w,
+                              titletext: 'Iron Deficit',
+                              discrinptiontext: 'lamka 4800-3244',
+                              icon: Icons.book,
+                            ),
+                            ReUsedCell(
+                              onPressed: TicketScreen(),
+                              showimage: 'assets/mag2.png',
+                              cardwidth: 350.w,
+                              titletext: 'Iron Deficit',
+                              discrinptiontext: 'lamka 4800-3244',
+                              icon: Icons.book,
+                            ),
+
+                          ],
                         ),
                       ),
-                      SizedBox(height: 15.h,),
-                      Row(
-                        children: [
-                          CustomButton(icon: Icons.location_on,width: 50.w,height: 50.h,),
-                          SizedBox(
-                            width: 40.w,
-                          ),
-                          Column(
-                            children: [
-                              Text(
-                                'Aniewlo',
-                                style: TextStyle(
-                                  color: blackColor,
-                                  fontSize: 15.sp,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                              Text(
-                                'Aniewlo',
-                                style: TextStyle(
-                                  color: lightBlackColor,
-                                  fontSize: 15.sp,
-                                  fontWeight: FontWeight.w400,
-                                ),
-                              ),
-                            ],
-                          )
-                        ],
+
+
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(bottom: 10),
+                      decoration: BoxDecoration(
+                        color: Colors.yellow[200],
+                        borderRadius: BorderRadius.all(Radius.circular(15))
                       ),
-                      SizedBox(
-                        height: 15.h,
+                      height: 65.h,
+                      width: 350.w,
+                      child:  TextButton(
+                        onPressed: () {
+
+                        },
+                      child:  Text('Buy Ticket',style: TextStyle(
+                        fontSize: 30.sp,fontWeight: FontWeight.w600,color: blackColor
+                      ),),
+                        
                       ),
-                      Row(
-                        children: [
-                          CustomButton(icon: Icons.book,width: 50.w,height: 50.h,),
-                          SizedBox(
-                            width: 40.w,
-                          ),
-                          Column(
-                            children: [
-                              Text(
-                                'Aniewlo',
-                                style: TextStyle(
-                                  color: blackColor,
-                                  fontSize: 15.sp,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                              Text(
-                                '9am--6pm',
-                                style: TextStyle(
-                                  color: lightBlackColor,
-                                  fontSize: 15.sp,
-                                  fontWeight: FontWeight.w400,
-                                ),
-                              ),
-                            ],
-                          )
-                        ],
-                      ),
-                      SizedBox(height: 10,),
-                      Text(
-                        'News',
-                        style: TextStyle(
-                          color: buttonColor,
-                          fontSize: 22.sp,
-                          fontWeight: FontWeight.w800,
-                        ),
-                      ),
-                      SizedBox(height: 10.h,),
-                      ReUsedCell(
-                        onPressed: TicketScreen(),
-                        showimage: 'assets/mag2.png',
-                        cardwidth: 350.w,
-                        titletext: 'Iron Deficit',
-                        discrinptiontext: 'lamka 4800-3244',
-                        icon: Icons.book,
-                      ),
-                    ],
-                  ),
-                ),
+                    )
+                  ],
+                )
               )
             ],
           ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:week1task/UI/custom_widgets/reusecell.dart';
-import 'package:week1task/UI/custom_widgets/topviewtext.dart';
+import 'package:week1task/UI/custom_widgets/tab_bar.dart';
 import 'package:week1task/UI/screens/sell_screen.dart';
 
 import '../../core/colors.dart';
@@ -32,7 +32,7 @@ class BottomBar2 extends StatelessWidget {
               const Expanded(child: Icon(Icons.book)),
             ],
           ),
-          Container(
+          SizedBox(
             height: 510,
             child: ListView(
               scrollDirection: Axis.vertical,

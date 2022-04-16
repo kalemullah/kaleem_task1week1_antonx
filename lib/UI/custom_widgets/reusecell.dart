@@ -74,11 +74,11 @@ class ReUsedCell extends StatelessWidget {
               SizedBox(
                 height: 8.h,
               ),
-              Container(
+              SizedBox(
                 width: cardwidth,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
-                  children: [Icon(Icons.location_on), Text(discrinptiontext)],
+                  children: [const Icon(Icons.location_on), Text(discrinptiontext)],
                 ),
               )
             ],
@@ -91,7 +91,7 @@ class ReUsedCell extends StatelessWidget {
                 color: Colors.grey.withOpacity(0.5),
                 spreadRadius: 5,
                 blurRadius: 2,
-                offset: Offset(0, 3), // changes position of shadow
+                offset: const Offset(0, 3), // changes position of shadow
               ),
             ],
           ),
@@ -129,7 +129,7 @@ class SecondReUseCell extends StatelessWidget {
         children: [
           Padding(
             padding:  EdgeInsets.all(8.r),
-            child: Container(
+            child: SizedBox(
               width: 165.r,
               height: 200.r,
               child: ClipRRect(
@@ -161,22 +161,19 @@ class SecondReUseCell extends StatelessWidget {
               SizedBox(
                 height: 10.h,
               ),
-              Container(
-
-                child: Text(
-                  text2,
-                  style: TextStyle(
-                    color: buttonColor,
-                    fontSize: 20.sp,
-                    fontWeight: FontWeight.w800,
-                  ),
+              Text(
+                text2,
+                style: TextStyle(
+                  color: buttonColor,
+                  fontSize: 20.sp,
+                  fontWeight: FontWeight.w800,
                 ),
               ),
               SizedBox(
                 height: 50.h,
               ),
               Padding(
-                padding:  EdgeInsets.only(right: 30.0),
+                padding:  EdgeInsets.only(right: 30.w),
                 child: Row(
                   children:  [
                     const Icon(Icons.location_on),
