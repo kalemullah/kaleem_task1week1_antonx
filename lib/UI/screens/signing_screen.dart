@@ -99,7 +99,7 @@ class _siginState extends State<SigInScreen> {
                   ),
                   BottomButton(
                     text: 'Log In',
-                    color: const Color(0xffe7cdc6),
+                    color: bottomButtonColor,
                     buttomcolor: blackColor,
                    // onPressed: (){},
                     onPressed: () async {
